@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hope Con 2024</title>
+    <title>Hope Con'2024</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -13,6 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="logo">
+        </a>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Preletores</a>
+        </nav>
+    </header>
 </body>
 </html>

@@ -1,6 +1,46 @@
+:root {
+    --main-color: #FE770B;
+    --secondary-color: #FFF;
+    --main-font: "Open Sans", system-ui;
+    --contrast-font: "Cherry Bomb One", system-ui;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", system-ui;
+    font-family: var(--main-font);
+}
+
+/*HEADER*/
+.header {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 1em 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.header .logo img {
+    width: 100px;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    transition: .5s;
+}
+
+.header nav a:hover {
+    transform: translateY(-5px);
 }
