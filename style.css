@@ -12,7 +12,12 @@
     font-family: var(--main-font);
 }
 
-/*HEADER*/
+html, body {
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
 .header {
     background-color: var(--secondary-color);
     width: 100%;
@@ -43,4 +48,15 @@
 
 .header nav a:hover {
     transform: translateY(-5px);
+}
+
+/* HOME */
+
+#home {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, --main-color, --secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
