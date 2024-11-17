@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Hope Con'2024</title>
+    <title>HOPE CONF 24</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,26 +26,24 @@
 <body>
     <!-- HEADER  -->
     <header class="header">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <a href="#home" class="logo">
+            HOPE
+        </a>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#about">Sobre</a>
             <a href="#speakers">Preletores</a>
-            <a href="#confirm-presence">Ingresso</a>
+            <a href="#confirm-presence">Confirmar presença</a>
         </nav>
     </header>
 
     <!-- HOME -->
     <section class="home" id="home">
-        <div class="text-container-home">
-            <img src="img/logo.png" alt="Logo" class="logo">
-            <span>23 de Novembro</span>
-            <a href="#confirm-presence" class="btn-home">Confirmar minha presença</a>
-        </div>
+        <a href="#confirm-presence" class="btn-home">Confirmar minha presença</a>
     </section>
 
-    <!-- SOBRE -->
+    <!-- ABOUT -->
     <section class="about" id="about">
         <div class="text-container-about">
             <h2>Conferência Hope 2024</h2>
@@ -94,19 +92,23 @@
         <div class="confirm-presence-container">
             <div class="text-container-confirm-presence">
                 <h2>Confirme sua presença aqui!</h2>
-                <p>Aspernatur quis maiores libero iure lorem ipsum dolor sit consectetur adipisicing elit</p>
+                <p>Sua presença é muito importante para nós! Participe e torne este momento ainda mais especial</p>
             </div>
-            <form autocomplete="off">
-                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" />
-                <button type="submit" class="form-btn" id="form-btn">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
+            <div class="form-container">
+                <form autocomplete="off" id="form">
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required />
+                    <button type="submit" class="form-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+                <p class="confirm-presence-msg" id="msg">Presença confirmada!</p>
+            </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer" id="footer">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img src="img/logo-hope.png" alt="Logo" class="logo">
 
         <ul class="list-footer">
             <li>
@@ -132,30 +134,7 @@
 
     <!--JAVASCRIPT SWIPER-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            // Define a direção do slide para horizontal
-            direction: 'horizontal',
-            // Ativa o loop, permitindo que o carrossel repita os slides infinitamente
-            loop: true,
-
-            // Define a paginação (os pontos indicadores de slides)
-            pagination: {
-                el: '.swiper-pagination', // Seleciona o elemento de paginação
-            },
-
-            // Define os botões de navegação (avançar e voltar)
-            navigation: {
-                nextEl: '.swiper-button-next', // Botão para avançar
-                prevEl: '.swiper-button-prev', // Botão para voltar
-            },
-
-            // Define a barra de rolagem (scrollbar)
-            scrollbar: {
-                el: '.swiper-scrollbar', // Seleciona o elemento da barra de rolagem
-            },
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
