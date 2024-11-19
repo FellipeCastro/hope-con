@@ -78,6 +78,10 @@ body {
     font-style: bold;
     font-weight: 700;
 }
+.offcanvas-header i{
+    font-size: 230px !important;
+  
+}
 
 /* HOME */
 .home {
