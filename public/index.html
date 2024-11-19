@@ -13,6 +13,11 @@
             rel="stylesheet"
         />
 
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
         <!--FONT AWESOME-->
         <script
             src="https://kit.fontawesome.com/108acab114.js"
@@ -33,6 +38,48 @@
     <body>
         <!-- HEADER  -->
         <header class="header">
+            <!-- botão Menu -->
+            <button
+                class="btn btn-primary btn-menu"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Canvas Menu -->
+            <div
+                class="offcanvas offcanvas-start"
+                data-bs-scroll="true"
+                data-bs-backdrop="false"
+                tabindex="-1"
+                id="offcanvasScrolling"
+                aria-labelledby="offcanvasScrollingLabel"
+            >
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                        Conferência Hope - 2024
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="navMobile">
+                        <ul>
+                           <li>  <i class="fa-solid fa-house"></i> <a href="#home">Home </a> </li>
+                           <li> <i class="fa-solid fa-address-card"></i> <a href="#about">Sobre</a> </li>
+                           <li> <i class="fa-solid fa-person"></i>><a href="#speakers"> Preletores</a> </li>
+                           <li> <i class="fa-solid fa-check"></i><a href="#confirm-presence">Confirmar presença</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- fim menu -->
             <img src="img/logo-hope.png" alt="Logo" class="logo" />
 
             <nav>
@@ -72,9 +119,7 @@
                     <li>
                         <i class="fa-solid fa-calendar-days"></i> 23 de Novembro
                     </li>
-                    <li>
-                        <i class="fa-solid fa-clock"></i> 15h / 19h
-                    </li>
+                    <li><i class="fa-solid fa-clock"></i> 15h / 19h</li>
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
                         Rua das Amazonas, 210
@@ -191,8 +236,127 @@
             </ul>
         </footer>
 
+        <!-- Bootstrap JavaScript Bundle (inclui Popper.js) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            defer
+        ></script>
+
         <!--JAVASCRIPT SWIPER-->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="script.js"></script>
+
+        <!--FireBase Importação-->
+        <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+            import {
+                getFirestore,
+                collection,
+                addDoc,
+                query,
+                where,
+                getDocs,
+                setDoc,
+                doc,
+            } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+
+            // Configuração do Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyCFWAKjdjxwWjzZe7sUDa3JI08d3NcRW7A",
+                authDomain: "hope-con.firebaseapp.com",
+                projectId: "hope-con",
+                storageBucket: "hope-con.firebasestorage.app",
+                messagingSenderId: "91630868574",
+                appId: "1:91630868574:web:1650659cea72137fb33ccf",
+                measurementId: "G-4LHZZV81YE",
+            };
+
+            // Inicializa o Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            // Função para contar documentos na coleção "email"
+            async function contarEmails() {
+                try {
+                    const snapshot = await getDocs(collection(db, "email"));
+                    return snapshot.size;
+                } catch (error) {
+                    console.error("Erro ao contar documentos:", error);
+                    return null;
+                }
+            }
+
+            // Função para atualizar a contagem na coleção "quantidade"
+            async function atualizarContagem(quantidade) {
+                try {
+                    await setDoc(doc(db, "quantidade", "total"), {
+                        quantidade: quantidade,
+                    });
+                    console.log("Contagem atualizada com sucesso:", quantidade);
+                } catch (error) {
+                    console.error("Erro ao atualizar a contagem:", error);
+                }
+            }
+
+            // Evento de envio do formulário
+            document
+                .getElementById("form")
+                .addEventListener("submit", async function (e) {
+                    e.preventDefault();
+
+                    const email = document.getElementById("email").value;
+                    const msgElement = document.getElementById("msg");
+
+                    try {
+                        const q = query(
+                            collection(db, "email"),
+                            where("email", "==", email)
+                        );
+                        const querySnapshot = await getDocs(q);
+
+                        if (querySnapshot.empty) {
+                            console.log(
+                                "E-mail não encontrado, adicionando ao Firestore..."
+                            );
+
+                            // Adiciona o e-mail à coleção "email"
+                            await addDoc(collection(db, "email"), { email });
+
+                            console.log("E-mail adicionado com sucesso!");
+
+                            // Contar os e-mails e atualizar a coleção "quantidade"
+                            const quantidade = await contarEmails();
+                            if (quantidade !== null) {
+                                await atualizarContagem(quantidade);
+                            }
+
+                            // Mensagem de sucesso
+                            msgElement.textContent = "Presença confirmada!";
+                            msgElement.style.color = "green";
+                            msgElement.style.display = "block";
+                            document.getElementById("email").value = "";
+                        } else {
+                            console.log("E-mail já cadastrado!");
+                            msgElement.textContent =
+                                "Este e-mail já está cadastrado!";
+                            msgElement.style.color = "red";
+                            msgElement.style.display = "block";
+                        }
+
+                        // Ocultar a mensagem após 3 segundos
+                        setTimeout(() => {
+                            msgElement.style.display = "none";
+                        }, 3000);
+                    } catch (error) {
+                        console.error("Erro no envio do e-mail:", error);
+                        msgElement.textContent =
+                            "Erro ao salvar o e-mail, tente novamente.";
+                        msgElement.style.color = "red";
+                        msgElement.style.display = "block";
+                    }
+                });
+        </script>
     </body>
 </html>
