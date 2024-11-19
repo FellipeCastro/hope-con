@@ -55,6 +55,7 @@ body {
     transition: 0.5s;
 }
 
+
 .header nav a:hover {
     transform: translateY(-0.2em);
 }
@@ -68,20 +69,33 @@ body {
     border: none;
     display: none;
 }
+
 .offcanvas-body,
 .offcanvas-header {
     background-color: var(--main-color) !important;
     color: var(--secondary-color) !important;
 }
-.offcanvas-header h5{
+
+.offcanvas-header h5 {
     font-size: 20px !important;
     font-style: bold;
     font-weight: 700;
 }
-.offcanvas-header i{
-    font-size: 230px !important;
-  
+
+.navMobile i{
+    font-size: 17px !important;
+    font-style: bold;
+    font-weight: 700;
+    padding-right: 15px;
+
 }
+
+
+.navMobile i, .navMobile a:hover {
+    transform: translateY(-0.2em);
+}
+
+
 
 /* HOME */
 .home {
@@ -417,44 +431,85 @@ body {
         background-image: url("./img/home-bg-cell.jpeg");
     }
 
+    .btn-home {
+        text-decoration: none;
+        margin: 0 auto;
+    }
+
+
+    .header nav a {
+        display: none !important;
+    }
+
+    .header img {
+        margin: 0 auto !important;
+    }
+
+    .btn-menu {
+        display: block !important;
+    }
+
+    .btn-menu i {
+        font-size: 20px !important;
+    }
+
+    .navMobile {
+        background-color: #ff6b01 !important;
+        width: max-content !important;
+        list-style: none !important;
+        text-decoration: none !important;
+    }
+
+    .navMobile a {
+        font-size: 20px !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .navMobile li {
+        list-style: none !important;
+    }
+
+    .text-container-about ul {
+        grid-template-columns: 1fr ;
+        gap: 1em;
+    }
+}
+
+@media (max-width <= 490px) {
     .header nav a {
         display: none;
     }
 
     .header img {
-        margin: 0 auto;
+        margin: 0 auto !important;
     }
 
     .btn-menu {
-        display: block;
+        display: block !important;
     }
+
     .btn-menu i {
-        font-size: 20px;
+        font-size: 20px !important;
     }
 
     .navMobile {
-        background-color: #ff6b01;
+        background-color: #ff6b01 !important;
         width: max-content;
         list-style: none;
         text-decoration: none;
     }
 
     .navMobile a {
-        font-size: 20px;
-        color: white;
-        text-decoration: none;
+        font-size: 20px !important;
+        color: white !important;
+        text-decoration: none !important;
     }
 
     .navMobile li {
-        list-style: none;
+        list-style: none !important;
     }
-    .text-container-about ul {
-        grid-template-columns: 1fr;
-        gap: 1em;
-    }
-}
 
-@media (max-width: 490px) {
     .footer {
         flex-direction: column;
         gap: 2em;
