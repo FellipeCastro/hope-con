@@ -1,140 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <title>HOPE CONF 24</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <title>HOPE CONF 24</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- GOOGLE FONTS - OPEN SANS/CHERRY BOMB -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Knewave&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- GOOGLE FONTS - OPEN SANS/CHERRY BOMB -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Knewave&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+        <!--FONT AWESOME-->
+        <script
+            src="https://kit.fontawesome.com/108acab114.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/108acab114.js" crossorigin="anonymous" defer></script>
+        <!--CSS SWIPER-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
 
-    <!--CSS SWIPER-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <body>
+        <!-- HEADER  -->
+        <header class="header">
+            <img src="img/logo-hope.png" alt="Logo" class="logo" />
 
-<body>
-    <!-- HEADER  -->
-    <header class="header">
-        <a href="#home" class="logo">
-            HOPE
-        </a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#speakers">Preletores</a>
+                <a href="#confirm-presence">Confirmar presença</a>
+            </nav>
+        </header>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">Sobre</a>
-            <a href="#speakers">Preletores</a>
-            <a href="#confirm-presence">Confirmar presença</a>
-        </nav>
-    </header>
+        <!-- HOME -->
+        <section class="home" id="home">
+            <a href="#confirm-presence" class="btn-home"
+                >Confirmar minha presença</a
+            >
+        </section>
 
-    <!-- HOME -->
-    <section class="home" id="home">
-        <a href="#confirm-presence" class="btn-home">Confirmar minha presença</a>
-    </section>
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <div class="text-container-about">
+                <h2>Conferência Hope 2024</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officia neque a praesentium, mollitia, aspernatur dolore
+                    necessitatibus doloribus sequi libero ipsa porro enim,
+                    deserunt doloremque ipsam placeat tenetur recusandae quasi.
+                    Saepe. Lorem ipsum dolor, sit amet consectetur adipisicing
+                    elit. Neque rerum quod et esse at iste, maxime similique
+                    dolore, ullam consequatur quisquam. Fugiat sit omnis
+                    pariatur eligendi aliquam deleniti totam labore? Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Aspernatur,
+                    reprehenderit dolores. Pariatur, nisi, dicta eaque porro
+                    quae, autem laudantium atque nam repellat sint velit tenetur
+                    eveniet aliquid delectus officia doloremque.
+                </p>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-calendar-days"></i> 23 de Novembro
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock"></i> 15h / 19h
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Rua das Amazonas, 210
+                    </li>
+                </ul>
+            </div>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="text-container-about">
-            <h2>Conferência Hope 2024</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia neque a praesentium, mollitia,
-                aspernatur dolore necessitatibus doloribus sequi libero ipsa porro enim, deserunt doloremque ipsam
-                placeat tenetur recusandae quasi. Saepe. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
-                rerum quod et esse at iste, maxime similique dolore, ullam consequatur quisquam. Fugiat sit omnis
-                pariatur eligendi aliquam deleniti totam labore? Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Aspernatur, reprehenderit dolores. Pariatur, nisi, dicta eaque porro quae, autem laudantium atque
-                nam repellat sint velit tenetur eveniet aliquid delectus officia doloremque.</p>
-        </div>
+            <img src="img/img-about.svg" alt="Ilustração" class="img-about" />
+        </section>
 
-        <img src="img/img-about.svg" alt="Ilustração" class="img-about">
-    </section>
+        <!-- SPEAKERS -->
+        <section class="speakers" id="speakers">
+            <div class="swiper">
+                <h2>Preletores</h2>
 
-    <!-- SPEAKERS -->
-    <section class="speakers" id="speakers">
-        <div class="swiper">
-            <h2>Preletores</h2>
-
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="img/paulo-pedro.png" alt="Paulo Pedro">
-                    <h3>Paulo Pedro</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum eum illum excepturi rem sed id
-                        dicta nam atque, iusto, dolore quod enim similique impedit nostrum temporibus ipsam praesentium
-                        molestiae! Voluptatum?</p>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/paulo-pedro.png" alt="Paulo Pedro" />
+                        <h3>Paulo Pedro</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Earum eum illum excepturi rem sed id dicta nam
+                            atque, iusto, dolore quod enim similique impedit
+                            nostrum temporibus ipsam praesentium molestiae!
+                            Voluptatum?
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/thais-martins.png" alt="Thaís Martins" />
+                        <h3>Thaís Martins</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Earum eum illum excepturi rem sed id dicta nam
+                            atque, iusto, dolore quod enim similique impedit
+                            nostrum temporibus ipsam praesentium molestiae!
+                            Voluptatum?
+                        </p>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="img/thais-martins.png" alt="Thaís Martins">
-                    <h3>Thaís Martins</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum eum illum excepturi rem sed id
-                        dicta nam atque, iusto, dolore quod enim similique impedit nostrum temporibus ipsam praesentium
-                        molestiae! Voluptatum?</p>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- CONFIRM PRESENCE -->
+        <section class="confirm-presence" id="confirm-presence">
+            <div class="confirm-presence-container">
+                <div class="text-container-confirm-presence">
+                    <h2>Confirme sua presença aqui!</h2>
+                    <p>
+                        Sua presença é muito importante para nós! Participe e
+                        torne este momento ainda mais especial
+                    </p>
+                </div>
+                <div class="form-container">
+                    <form autocomplete="off" id="form">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        />
+                        <button type="submit" class="form-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="confirm-presence-msg" id="msg">
+                        Presença confirmada!
+                    </p>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+        </section>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
+        <!-- FOOTER -->
+        <footer class="footer" id="footer">
+            <img src="img/logo-hope.png" alt="Logo" class="logo" />
 
-    <!-- CONFIRM PRESENCE -->
-    <section class="confirm-presence" id="confirm-presence">
-        <div class="confirm-presence-container">
-            <div class="text-container-confirm-presence">
-                <h2>Confirme sua presença aqui!</h2>
-                <p>Sua presença é muito importante para nós! Participe e torne este momento ainda mais especial</p>
-            </div>
-            <div class="form-container">
-                <form autocomplete="off" id="form">
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required />
-                    <button type="submit" class="form-btn">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
-                <p class="confirm-presence-msg" id="msg">Presença confirmada!</p>
-            </div>
-        </div>
-    </section>
+            <ul class="list-footer">
+                <li>
+                    <a
+                        href="https://www.instagram.com/mac_kairos/"
+                        target="_blank"
+                        ><i class="fa-brands fa-instagram"></i> - mac_kairos</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.facebook.com/ministerioaliancakairos"
+                        target="_blank"
+                        ><i class="fa-brands fa-facebook"></i> - Ministério
+                        Aliança Cristã Kairós</a
+                    >
+                </li>
+                <li>
+                    <a href="#" target="_blank"
+                        ><i class="fa-solid fa-phone"></i> - 00000-0000</a
+                    >
+                </li>
+                <li>
+                    <a href="#" target="_blank"
+                        ><i class="fa-solid fa-envelope"></i> -
+                        kairos@email.com</a
+                    >
+                </li>
+                <li>
+                    <a href="#" target="_blank"
+                        ><i class="fa-solid fa-location-dot"></i> - Rua
+                        Amazonas, Portal dos Ipês II</a
+                    >
+                </li>
+            </ul>
+        </footer>
 
-    <!-- FOOTER -->
-    <footer class="footer" id="footer">
-        <img src="img/logo-hope.png" alt="Logo" class="logo">
-
-        <ul class="list-footer">
-            <li>
-                <a href="https://www.instagram.com/mac_kairos/" target="_blank"><i class="fa-brands fa-instagram"></i> -
-                    mac_kairos</a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/ministerioaliancakairos" target="_blank"><i
-                        class="fa-brands fa-facebook"></i> - Ministério Aliança Cristã Kairós</a>
-            </li>
-            <li>
-                <a href="#" target="_blank"><i class="fa-solid fa-phone"></i> - 00000-0000</a>
-            </li>
-            <li>
-                <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> - kairos@email.com</a>
-            </li>
-            <li>
-                <a href="#" target="_blank"><i class="fa-solid fa-location-dot"></i> - Rua Amazonas, Portal dos Ipês
-                    II</a>
-            </li>
-        </ul>
-    </footer>
-
-    <!--JAVASCRIPT SWIPER-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
-
+        <!--JAVASCRIPT SWIPER-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
